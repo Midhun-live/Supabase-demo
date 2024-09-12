@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../config/supabaseConfig";
 import StudentList from "./StudentList";
+import "../index.css";
 
 function Home() {
   const [fetchError, setFetchError] = useState(null);
@@ -38,7 +39,7 @@ function Home() {
       {students.length > 0 && (
         <div>
           <div>
-            <p>Order by:</p>
+            <p className="bg-gray-600">Order by:</p>
             <button onClick={() => setOrderby("id")}>Id</button>
             <button onClick={() => setOrderby("f_name")}>Name</button>
             <button
@@ -50,7 +51,7 @@ function Home() {
             </button>
             {orderby}
           </div>
-          <div className="overall-student-box">
+          <div className="bg-gray-500 px-16 py-6 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {students.map((student) => (
               <StudentList
                 key={student.id}

@@ -8,7 +8,9 @@ function App() {
   return (
     <Router>
       <nav className="heading">
-        <h1 className="text-primary">Student Data</h1>
+        <h1 className="text-white w-full h-24 flex justify-center items-center bg-green-400">
+          Student Data
+        </h1>
         <Link to="/">Home</Link>
         <Link to="/create">Create New Student</Link>
       </nav>
