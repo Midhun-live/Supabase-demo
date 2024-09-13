@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../config/supabaseConfig";
 import { Link } from "react-router-dom";
+import { computeHeadingLevel } from "@testing-library/react";
 
 function Home() {
   const [fetchError, setFetchError] = useState(null);
@@ -11,7 +12,7 @@ function Home() {
     const fetchStudents = async () => {
       let { data, error } = await supabase.from("student").select();
       if (error) {
-        setFetchError("coulf'nt display data");
+        setFetchError("could'nt display data");
         throw error;
       }
       setStudents(data);
