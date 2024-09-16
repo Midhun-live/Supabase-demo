@@ -5,7 +5,7 @@ import supabase from "../config/supabaseConfig";
 function Create() {
   const navigate = useNavigate();
 
-  const [name, setf_name] = useState("");
+  const [f_name, setf_name] = useState("");
   const [department, setDepartment] = useState("");
   const [formError, setFormError] = useState(null);
 
@@ -13,14 +13,14 @@ function Create() {
     e.preventDefault();
 
     // Ensure the required fields are filled
-    if (!name || !department) {
+    if (!f_name || !department) {
       setFormError("Please fill in all fields");
       return;
     }
 
     const { data, error } = await supabase
       .from("student")
-      .insert([{ name, department }]);
+      .insert([{ f_name, department }]);
 
     if (error) {
       console.error("Error occurred:", error);
