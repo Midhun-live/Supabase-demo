@@ -18,7 +18,8 @@ const StudentList = ({ student, onDelete }) => {
       console.log(data);
       onDelete(student.id);
     }
-  };
+    onDelete(student.id);
+  };    
   return (
     <div className="bg-white mb-6 rounded shadow-lg relative">
       <img src={students} alt="student" className="object-cover" />

@@ -11,8 +11,10 @@ function App() {
         <h1 className="text-white w-full h-24 flex justify-center items-center bg-green-400">
           Student Data
         </h1>
-        <Link to="/">Home</Link>
-        <Link to="/create">Create New Student</Link>
+        <div className="flex flex-end gap-10 underline">
+          <Link to="/">Home</Link>
+          <Link to="/create">Create New Student</Link>
+        </div>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />

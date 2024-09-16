@@ -6,9 +6,9 @@ import "../index.css";
 function Home() {
   const [fetchError, setFetchError] = useState(null);
   const [students, setStudents] = useState([]);
-  const [orderby, setOrderby] = useState("id ");
+  const [orderby, setOrderby] = useState("id");
 
-  const handleDelete = (id) => {
+  const  handleDelete = (id) => {
     setStudents((prevStudents) => {
       return prevStudents.filter((s) => s.id !== id);
     });
@@ -21,7 +21,7 @@ function Home() {
       let { data, error } = await supabase
         .from("student")
         .select()
-        .order(orderby, { ascending: false });
+        .order(orderby, { ascending: true });
       if (error) {
         setFetchError("could'nt display data");
         throw error;
@@ -33,13 +33,14 @@ function Home() {
   }, [orderby]);
 
   return (
-    <div className="student">
+    <div>
       {fetchError && <p>{fetchError}</p>}
 
       {students.length > 0 && (
         <div>
-          <div>
-            <p className="bg-gray-600">Order by:</p>
+          <div className="flex flex-col items-center">
+            <p className="underline">Order by: </p><span>{orderby}</span>
+            <div className="flex gap-10">
             <button onClick={() => setOrderby("id")}>Id</button>
             <button onClick={() => setOrderby("f_name")}>Name</button>
             <button
@@ -49,7 +50,7 @@ function Home() {
             >
               Department
             </button>
-            {orderby}
+            </div>
           </div>
           <div className="bg-gray-500 px-16 py-6 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {students.map((student) => (
