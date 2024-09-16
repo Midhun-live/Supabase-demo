@@ -24,6 +24,7 @@ function Home() {
         .order(orderby, { ascending: true });
       if (error) {
         setFetchError("could'nt display data");
+        setFetchError("could'nt display data");
         throw error;
       }
       setStudents(data);
