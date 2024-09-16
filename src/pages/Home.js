@@ -1,17 +1,29 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../config/supabaseConfig";
-import { Link } from "react-router-dom";
-import { computeHeadingLevel } from "@testing-library/react";
+import StudentList from "./StudentList";
+import "../index.css";
 
 function Home() {
   const [fetchError, setFetchError] = useState(null);
   const [students, setStudents] = useState([]);
+  const [orderby, setOrderby] = useState("id");
+
+  const  handleDelete = (id) => {
+    setStudents((prevStudents) => {
+      return prevStudents.filter((s) => s.id !== id);
+    });
+  };
 
   useEffect(() => {
     console.log(supabase);
+
     const fetchStudents = async () => {
-      let { data, error } = await supabase.from("student").select();
+      let { data, error } = await supabase
+        .from("student")
+        .select()
+        .order(orderby, { ascending: true });
       if (error) {
+        setFetchError("could'nt display data");
         setFetchError("could'nt display data");
         throw error;
       }
@@ -19,24 +31,37 @@ function Home() {
     };
 
     fetchStudents();
-  }, []);
+  }, [orderby]);
 
   return (
-    <div className="student">
+    <div>
       {fetchError && <p>{fetchError}</p>}
+
       {students.length > 0 && (
-        <div className="overall-student-box">
-          {students.map((student) => (
-            <div key={student.id} className="student-box">
-              <h1>{student.department}</h1>
-              <p>{student.f_name}</p>
-              <div className="buttons">
-                <Link to={"/" + student.id}>
-                  <i className="material-icons">edit</i>
-                </Link>
-              </div>
+        <div>
+          <div className="flex flex-col items-center">
+            <p className="underline">Order by: </p><span>{orderby}</span>
+            <div className="flex gap-10">
+            <button onClick={() => setOrderby("id")}>Id</button>
+            <button onClick={() => setOrderby("f_name")}>Name</button>
+            <button
+              onClick={() => {
+                setOrderby("department");
+              }}
+            >
+              Department
+            </button>
             </div>
-          ))}
+          </div>
+          <div className="bg-gray-500 px-16 py-6 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {students.map((student) => (
+              <StudentList
+                key={student.id}
+                student={student}
+                onDelete={handleDelete}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
