@@ -121,6 +121,9 @@ Deploy to Vercel:
 
    - Once deployed, Vercel will provide you with a live URL where you can view your application. You can find this URL in the Vercel dashboard under your project.
 
+## Screenshot
+<img width="1440" alt="Screenshot 2024-09-17 at 2 37 59 PM" src="https://github.com/user-attachments/assets/c54a3633-e8e2-4e4a-b585-104b3f5a19f2">
+
 ## Contact
 
 - **Email**: midhunchakkaravarthy07@gmail.com
