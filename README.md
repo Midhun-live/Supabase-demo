@@ -79,3 +79,18 @@ To run this project locally, follow these steps:
 
 Replace your-supabase-url and your-supabase-anon-key with your actual Supabase credentials.
 
+- Supabase Client Setup:
+
+Ensure you have a supabaseClient.js file in your src directory with the following setup:
+
+```bash
+// src/supabaseClient.js
+
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+export default supabase;
+
