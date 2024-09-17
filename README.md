@@ -80,8 +80,7 @@ To run this project locally, follow these steps:
 Replace your-supabase-url and your-supabase-anon-key with your actual Supabase credentials.
 
 - Supabase Client Setup:
-
-Ensure you have a supabaseClient.js file in your src directory with the following setup:
+ Ensure you have a supabaseClient.js file in your src directory with the following setup:
 
 ```bash
 // src/supabaseClient.js
