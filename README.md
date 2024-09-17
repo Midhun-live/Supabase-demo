@@ -82,14 +82,21 @@ To run this project locally, follow these steps:
 - Supabase Client Setup:
  Ensure you have a supabaseClient.js file in your src directory with the following setup:
 
-```bash
-// src/supabaseClient.js
+   ```bash
+   // src/supabaseClient.js
+   
+   import { createClient } from '@supabase/supabase-js';
+   
+   const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+   const supabaseKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+   const supabase = createClient(supabaseUrl, supabaseKey);
+   
+   export default supabase;
 
-import { createClient } from '@supabase/supabase-js';
+## Contact
 
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
-const supabaseKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-export default supabase;
+- **Email**: midhunchakkaravarthy07@gmail.com
+- **GitHub**: Midhun-live
+- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/midhun-chakkaravarthy/)
+- **Website**: [Student-List](https://supabase-demo-s1u2.vercel.app/)
 
