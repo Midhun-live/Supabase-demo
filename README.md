@@ -99,12 +99,13 @@ Deploy to Vercel:
 
 
 - **Push Your Code to GitHub**:
-   -Ensure your code is pushed to a GitHub repository.
+   - Ensure your code is pushed to a GitHub repository.
   
       ```bash
       git add .
       git commit -m "Prepare project for deployment"
       git push origin main
+      
 - **Deploy to Vercel**:
    - Go to Vercel and sign in or create an account.
    - Click on "New Project" and import your GitHub repository.
@@ -112,8 +113,8 @@ Deploy to Vercel:
 
    - During the setup, you’ll need to add environment variables:
 
-   - REACT_APP_SUPABASE_URL: Your Supabase URL
-   - REACT_APP_SUPABASE_ANON_KEY: Your Supabase anonymous key
+      - **REACT_APP_SUPABASE_URL**: Your Supabase URL
+      - **REACT_APP_SUPABASE_ANON_KEY**: Your Supabase anonymous key
    - Click "Deploy" and wait for Vercel to build and deploy your project.
 
 - **View Your Live Site**:
