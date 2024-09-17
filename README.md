@@ -72,6 +72,7 @@ To run this project locally, follow these steps:
   - Obtain your SUPABASE_URL and SUPABASE_ANON_KEY from the Supabase dashboard.
 - Configure Environment Variables:
   - Create a .env file in the root of your project with the following content:
+    
   ```bash
   REACT_APP_SUPABASE_URL=your-supabase-url
   REACT_APP_SUPABASE_ANON_KEY=your-supabase-anon-key
