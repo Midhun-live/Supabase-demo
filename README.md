@@ -9,6 +9,8 @@ This project is a React.js application integrated with Supabase for managing stu
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
+- [Deloyment](#deployment)
+- [Screenshot](#screenshot)
 - [Contact](#contact)
 
 ## Features
@@ -37,7 +39,7 @@ To run this project locally, follow these steps:
 2. **Navigate to the project directory:**
 
    ```bash
-   cd personal-portfolio
+   cd supabase-demo
 
 3. **Install dependencies:**
 
@@ -82,7 +84,7 @@ To run this project locally, follow these steps:
 
    ```bash
    // src/supabaseClient.js
-   
+
    import { createClient } from '@supabase/supabase-js';
    
    const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
@@ -90,6 +92,33 @@ To run this project locally, follow these steps:
    const supabase = createClient(supabaseUrl, supabaseKey);
    
    export default supabase;
+
+## Deployment
+
+Deploy to Vercel:
+
+
+- **Push Your Code to GitHub**:
+   -Ensure your code is pushed to a GitHub repository.
+  
+      ```bash
+      git add .
+      git commit -m "Prepare project for deployment"
+      git push origin main
+- **Deploy to Vercel**:
+   - Go to Vercel and sign in or create an account.
+   - Click on "New Project" and import your GitHub repository.
+   - Vercel will automatically detect that it’s a React project and set up the build settings.
+
+   - During the setup, you’ll need to add environment variables:
+
+   - REACT_APP_SUPABASE_URL: Your Supabase URL
+   - REACT_APP_SUPABASE_ANON_KEY: Your Supabase anonymous key
+   - Click "Deploy" and wait for Vercel to build and deploy your project.
+
+- **View Your Live Site**:
+
+   - Once deployed, Vercel will provide you with a live URL where you can view your application. You can find this URL in the Vercel dashboard under your project.
 
 ## Contact
 
