@@ -9,8 +9,6 @@ This project is a React.js application integrated with Supabase for managing stu
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Features
@@ -49,12 +47,12 @@ To run this project locally, follow these steps:
 4. **Run the development server:**
 
    ```bash
-   npm run dev
+   npm start
 
 5. **Open your browser and navigate to:**
 
    ```bash
-   [npm run dev](http://localhost:3000)
+   [npm start](http://localhost:3000)
 
 ## Usage
 
@@ -63,7 +61,7 @@ To run this project locally, follow these steps:
 - **Update a Student**: Edit student information using the edit button next to each record.
 - **Delete a Student**: Remove student records using the delete button.
 
-## Contributions
+## Configuration
 
 - Set Up Supabase:
   - Create a Supabase account and project at Supabase.
